@@ -1,0 +1,47 @@
+{
+  "name": "websecretBackend",
+  "version": "1.0.0",
+  "description": "A backend project base on Koa.js for wechat miniprogram",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index",
+    "local:dev": "cross-env NODE_ENV=dev node index.js",
+    "test": "./node_modules/mocha/bin/mocha --harmony test",
+    "createDB": ". db/createDB.sh",
+    "useDB": ". db/useDB.sh",
+    "local:alertDB": "cross-env NODE_ENV=dev node db/index",
+    "alertDB": "node db/index",
+    "migrate": "yarn createDB && yarn local:alertDB"
+  },
+  "author": "zjl1195185765@outlook.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "config-lite": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "ejs": "^2.5.6",
+    "js-sha1": "^0.6.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-mysql-session": "^0.0.2",
+    "koa-router": "^7.2.1",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^4.0.0",
+    "koa-static-cache": "^5.1.1",
+    "koa-views": "^6.0.2",
+    "markdown-it": "^8.4.0",
+    "md5": "^2.2.1",
+    "moment": "^2.18.1",
+    "mysql": "^2.13.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
